@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.clip-diagonal-text {
+  clip-path: polygon(
+    0 0,
+    100% 0%,
+    100% 0%,
+    0% 100%
+  );
+}
+
+.clip-diagonal-image {
+  clip-path: polygon(
+    0% 0%,
+    100% 0,
+    100% 90%,
+    0 90%
+  ); 
+}
