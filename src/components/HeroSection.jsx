@@ -7,9 +7,9 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-[30rem] text-white">
 
-      <div className="absolute w-3/4 h-full bg-[#1d57b2] z-10 flex items-start justify-start text-center clip-diagonal-text p-12">
-        <div className="flex flex-col items-center w-1/2">
-          <h1 className="text-4xl font-bold mb-4">Welcome to Your Shopping Experience</h1>
+      <div className="absolute w-3/4 h-full bg-[#1f6dc4ef] z-10 flex items-start justify-start text-center clip-diagonal-text p-12">
+        <div className="flex flex-col items-center gap-6 w-1/2">
+          <h1 className="text-5xl font-bold mb-4">Welcome to Your Shopping Experience</h1>
           <p className="text-lg mb-8">
             Discover the best products, amazing discounts, and seamless shopping.
           </p>

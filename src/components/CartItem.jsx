@@ -6,21 +6,26 @@ const CartItem = ({ item }) => {
   const dispatch = useDispatch();
 
   return (
-    <li className="w-2/3 grid grid-cols-3 gap-12 items-center shadow-lg p-4">
-      <img src={item.image} alt={item.title} className="max-w-[50%]" />
-      <p>{item.title}</p>
-      <div className="flex items-center justify-around">
+    <li className="w-[50rem] flex items-center justify-between min-h-28 gap-12 shadow-lg p-4 border-b-2 border-gray-100 ">
+      
+      <div className="flex items-center justify-start gap-12 ">
+      <img src={item.image} alt={item.title} className="w-12 h-14" />
+      <p className="text-md  drop-shadow">{item.title}</p>
 
-      <p className="font-bold">${item.price.toFixed(2)}</p>
-      <button
-        onClick={() => dispatch(removeFromCart(item.id))} // Använd Redux för att ta bort produkter
-        className="flex items-center justify-center"
+      </div>
+
+    
+    <div className="flex items-center justify-between gap-6 ">
+        <p className="font-bold font-serif text-xl drop-shadow">
+          ${item.price.toFixed(2)}
+        </p>
+        <button
+          onClick={() => dispatch(removeFromCart(item.id))} // Använd Redux för att ta bort produkter
+          className=""
         >
-        <FaTrashAlt
-          className="font-bold text-red-500 hover:text-red-700"
-          />
-      </button>
-          </div>
+          <FaTrashAlt className="font-bold text-red-500 hover:text-red-700" />
+        </button>
+        </div>
     </li>
   );
 };
