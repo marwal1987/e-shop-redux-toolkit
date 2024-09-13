@@ -8,7 +8,7 @@ const HeroSection = () => {
     <div className="relative w-full h-[30rem] text-white">
 
       <div className="absolute w-10/12 h-full bg-[#1f6dc4fa] z-10 flex items-start justify-start text-center clip-diagonal-text p-12">
-        <div className="flex flex-col items-center justify-center w-4/12 ">
+        <div className="flex flex-col items-center justify-center w-96 -rotate-[16.5deg] pt-6">
           <h1 className="text-5xl font-bold mb-4 drop-shadow">Welcome to Your Shopping Experience</h1>
           <p className="text-lg mb-8 drop-shadow">
             Discover the best products, amazing discounts, and seamless shopping.

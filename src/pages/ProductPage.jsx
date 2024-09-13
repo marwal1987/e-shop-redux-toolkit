@@ -2,15 +2,14 @@ import React, { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductById } from '../store/slices/productSlice'; // Importera thunk
-import { addToCart } from '../store/slices/cartSlice'; // Rätt export
-
+import { addToCart } from '../store/slices/cartSlice'; // Importera action addToCart
 
 const ProductPage = () => {
   const { id } = useParams(); // Hämta produktens id från URL:en
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  // Hämta data från Redux store
+  // Hämtar data från Redux store
   const product = useSelector((state) => state.products.selectedProduct);
   const status = useSelector((state) => state.products.status);
   const error = useSelector((state) => state.products.error);
@@ -18,7 +17,7 @@ const ProductPage = () => {
   // Trigga thunk för att hämta produktdata när komponenten laddas
   useEffect(() => {
     dispatch(fetchProductById(id));
-  }, [dispatch, id]);
+  }, [dispatch, id]); // Lyssna på dispatch och id
 
   // Hantera laddningsstatus och felmeddelanden
   if (status === 'loading') return <div className="max-w-full h-screen flex flex-col items-center justify-center m-auto">Loading product...</div>;

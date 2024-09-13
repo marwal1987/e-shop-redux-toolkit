@@ -9,17 +9,17 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.items.push(action.payload); // Lägg till produkt i kundvagnen
+      state.items.push(action.payload);
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter(item => item.id !== action.payload); // Ta bort produkt från kundvagnen
+      state.items = state.items.filter(item => item.id !== action.payload);
     },
     clearCart: (state) => {
-      state.items = []; // Rensa kundvagnen
+      state.items = [];
     },
   },
 });
 
-// Exportera reducer actions
+// Exportera reducer och actions
 export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

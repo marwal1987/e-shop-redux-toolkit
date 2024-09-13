@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
         <button
           onClick={() => dispatch(addToCart(product))} // Använd Redux för att lägga till produkt i kundvagnen
         >
-          <FaShoppingBag className="text-[#f3929c] " />
+          <FaShoppingBag className="text-[#f3929c] hover:text-gray-800" />
         </button>
       </div>
     </div>

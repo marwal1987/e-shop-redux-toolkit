@@ -6,7 +6,7 @@ import HeroSection from "../components/HeroSection";
 
 const HomePage = () => {
   const dispatch = useDispatch();
-  const products = useSelector((state) => state.products.items); // Hämta produkter från Redux
+  const products = useSelector((state) => state.products.items); // Hämta alla produkter från Redux Store
   const status = useSelector((state) => state.products.status);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ const HomePage = () => {
       <HeroSection />
       <div className="max-w-[90%] flex flex-col items-center justify-center m-auto gap-12">
         <h1 className="text-3xl font-bold mt-12">All Products</h1>
-        
+
         <div className="grid grid-cols-4 gap-6">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} /> // Rendera ProductCard för varje produkt och skicka med addToCart funktionen från App.jsx
