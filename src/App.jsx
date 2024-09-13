@@ -7,11 +7,13 @@ import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
 import CartPage from "./pages/CartPage";
 
+
+
 const App = () => {
   return (
     <Router>
       <Header />
-      <Routes> {/* Definerar olika URL:er och kopplar till sidorna */}
+      <Routes>
         <Route path="/" element={<HomePage />} />
         <Route
           path="/product/:id" 

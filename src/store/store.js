@@ -4,7 +4,7 @@ import productReducer from './slices/productSlice'; // Importera din productSlic
 
 export const store = configureStore({
   reducer: {
-    cart: cartReducer, // Se till att reducerarna inkluderas korrekt här
+    cart: cartReducer,
     products: productReducer,
   },
 });

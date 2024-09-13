@@ -52,7 +52,7 @@ const productSlice = createSlice({
     selectedProduct: null,
     error: null,
   },
-  reducers: {},
+  reducers: {}, 
   extraReducers: (builder) => {
     // Hanterar alla produkter
     builder

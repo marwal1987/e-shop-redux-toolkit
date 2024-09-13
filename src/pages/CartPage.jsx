@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromCart, clearCart } from "../store/slices/cartSlice";
+import { clearCart } from "../store/slices/cartSlice";
 import CartItem from "../components/CartItem";
 import { useNavigate } from "react-router-dom";
 
@@ -20,6 +20,7 @@ const CartPage = () => {
   return (
     <div className="w-2/3 m-auto mt-12 flex flex-col items-center justify-start h-screen gap-12 border-2 overflow-scroll ">
       <h1 className="text-4xl font-bold mt-12">Your Cart</h1>
+      
       {cartItems.length > 0 ? (
         <div className="flex flex-col items-center gap-12 ">
           <ul className="flex flex-col items-center gap-12 ">
@@ -27,7 +28,6 @@ const CartPage = () => {
               <CartItem
                 key={item.id}
                 item={item}
-                removeFromCart={() => dispatch(removeFromCart(item.id))} // Använd Redux för att ta bort produkter
               />
             ))}
           </ul>
