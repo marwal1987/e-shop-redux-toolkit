@@ -13,26 +13,24 @@ const HomePage = () => {
     dispatch(fetchAllProducts()); // Trigga API-anrop för att hämta produkter
   }, [dispatch]);
 
-  if (status === "loading") {
-    return (
-      <div className="max-w-full h-screen flex items-center justify-center m-auto">
-        Loading products...
-      </div>
-    );
-  }
-
   return (
     <>
       <HeroSection />
-      <div className="max-w-[90%] flex flex-col items-center justify-center m-auto gap-12">
-        <h1 className="text-3xl font-bold mt-12">All Products</h1>
-
-        <div className="grid grid-cols-4 gap-6">
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} /> // Rendera ProductCard för varje produkt och skicka med addToCart funktionen från App.jsx
-          ))}
+      {status === "loading" ? (
+        <div className="max-w-full h-screen flex items-center justify-center m-auto">
+          Loading products...
         </div>
-      </div>
+      ) : (
+        <div className="max-w-[90%] flex flex-col items-center justify-center m-auto gap-12">
+          <h1 className="text-3xl font-bold mt-12">All Products</h1>
+
+          <div className="grid grid-cols-4 gap-6">
+            {products.map((product) => (
+              <ProductCard key={product.id} product={product} /> // Rendera ProductCard för varje produkt, skickar med produktdatat
+            ))}
+          </div>
+        </div>
+      )}
     </>
   );
 };

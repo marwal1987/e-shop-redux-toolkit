@@ -7,7 +7,11 @@ const Header = () => {
 
   return (
     <header className="bg-[#3a3f54] sticky top-0 z-[20] flex max-w-full items-center justify-between p-6 text-white">
-      <img src="src/assets/logoShopping.webp" alt="logo" className="w-8 rounded-lg" />
+      <img
+        src="src/assets/logoShopping.webp"
+        alt="logo"
+        className="w-8 rounded-lg"
+      />
 
       <NavLink to="/">
         <FaHome size={20} />
@@ -16,8 +20,9 @@ const Header = () => {
       <NavLink to="/cart">
         <div className="flex gap-2">
           <FaShoppingCart size={20} />
-          <span className="text-xs text-[#f3929c] font-bold">{cartItemsCount}</span>
-          
+          <span className="text-xs text-[#f3929c] font-bold">
+            {cartItemsCount}
+          </span>
         </div>
       </NavLink>
     </header>

@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-full p-8 gap-12 rounded-sm shadow-md flex flex-col items-center justify-between border-b-2 border-gray-300">
+    <div className="w-full p-8 gap-12 rounded-md shadow-md flex flex-col items-center justify-between border-b-2 border-gray-300">
       <Link
         to={`/product/${product.id}`}
         className="w-full flex flex-col items-center gap-6"
