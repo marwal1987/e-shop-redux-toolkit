@@ -47,7 +47,7 @@ const CartPage = () => {
           <h1 className="text-4xl font-bold mt-12">Your cart is empty!</h1>
           <button
             className="bg-[#3a3f54] hover:bg-green-400 text-gray-100 font-bold py-2 px-4 ml-2 m-2 rounded"
-            onClick={(e) => navigate("/")}
+            onClick={() => navigate("/")}
           >
             Back to products
           </button>
