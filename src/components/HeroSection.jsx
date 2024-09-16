@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-[30rem] text-white border-b-2 border-gray-200">
       <div className="absolute w-9/12  h-full bg-[#1f6dc4f1] z-10 flex items-start justify-start text-center clip-diagonal-text ">
-        <div className="flex flex-col items-center justify-center w-72 -rotate-[45deg] mt-14  gap-4">
+        <div className="flex flex-col items-center justify-center w-72 -rotate-[45deg] mt-14 gap-4">
           <h1 className="pl-6 text-2xl font-bold drop-shadow">
             Welcome to Your Shopping Experience
           </h1>

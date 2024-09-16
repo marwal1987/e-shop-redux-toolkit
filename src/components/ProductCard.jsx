@@ -8,12 +8,12 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="w-full p-8 gap-12 rounded-md shadow-md flex flex-col items-center justify-between border-b-2 border-gray-300">
+    <div className="container p-8 gap-12 rounded-md shadow-md flex flex-col items-center justify-between border-b-2 border-gray-300">
       <Link
         to={`/product/${product.id}`}
-        className="w-full flex flex-col items-center gap-6"
+        className="w-full flex flex-col items-center gap-12"
       >
-        <img src={product.image} alt={product.title} className="h-72" />
+        <img src={product.image} alt={product.title} className="max-h-72" />
         <h2 className="text-lg font-bold text-center drop-shadow">
           {product.title}
         </h2>

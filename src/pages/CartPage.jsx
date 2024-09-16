@@ -30,9 +30,9 @@ const CartPage = () => {
             </ul>
             <p className="text-3xl font-bold font-serif">
               Total: ${calculateTotal().toFixed(2)}
-              <p className="text-sm font-extralight text-gray-500">
+              <div className="text-sm font-extralight text-gray-500">
                 (VAT included)
-              </p>
+              </div>
             </p>
             <button
               className="bg-[#3a3f54] hover:bg-green-400 text-gray-100 font-bold py-2 px-4 ml-2 m-2 rounded"

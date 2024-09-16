@@ -17,24 +17,32 @@ const ProductPage = () => {
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]); // Lyssna på dispatch och id
-
+  
   return (
     <div className="container m-auto h-screen flex flex-col items-center justify-center">
-      {status === "loading" ? (
+      {/* Conditional rendering för olika status */}
+      {status === "loading" && (
         <div className="max-w-full h-screen flex flex-col items-center justify-center m-auto">
           Loading product...
         </div>
-      ) : (
-        <div className="flex gap-12 items-center justify-around shadow-lg p-12 border-b-2 border-gray-200">
-          <img src={product.image} alt={product.title} className="max-w-sm" />
+      )}
 
+      {status === "failed" && (
+        <div className="max-w-full h-screen flex flex-col items-center justify-center m-auto">
+          Product not found
+        </div>
+      )}
+
+      {/* Om produkten är laddad och status är succeeded */}
+      {status === "succeeded" && product && (
+        <div className="flex gap-12 items-center justify-around shadow-lg p-12 border-b-2 border-gray-200">
+          <img src={product.image} alt={product.title} className="max-w-sm max-h-96" />
           <div className="flex flex-col items-start justify-evenly gap-12 max-w-sm h-full">
             <h1 className="text-2xl font-bold">{product.title}</h1>
             <p className="text-lg text-gray-600">{product.description}</p>
-            <p className="text-2xl font-bold font-serif ">
+            <div className="text-2xl font-bold font-serif ">
               ${product.price.toFixed(2)}
-            </p>
-
+            </div>
             <div className="flex gap-6">
               <button
                 className="bg-[#f3929c] text-gray-100 p-2 rounded font-bold hover:bg-[#3a3f54] "
