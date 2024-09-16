@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .clip-diagonal-text {
-  clip-path: polygon(0 0, 0% 0%, 45% 0%, 0% 100%);
+  clip-path: polygon(0 0, 0% 0%, 35% 0%, 0% 100%);
 }
 
 .clip-diagonal-image {
