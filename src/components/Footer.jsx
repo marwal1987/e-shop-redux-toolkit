@@ -7,9 +7,12 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white w-full mt-12">
       <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[#ffffff19] py-1">
-        
-        <img src="src/assets/logoShopping.webp" alt="logo" className="w-8 rounded-lg" />
-        
+        <img
+          src="src/assets/logoShopping.webp"
+          alt="logo"
+          className="w-8 rounded-lg"
+        />
+
         <div>
           <div className="flex justify-between p-4">
             <a href="https://www.instagram.com" target="_blank">

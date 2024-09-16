@@ -17,10 +17,9 @@ const ProductPage = () => {
   useEffect(() => {
     dispatch(fetchProductById(id));
   }, [dispatch, id]); // Lyssna på dispatch och id
-  
+
   return (
     <div className="container m-auto h-screen flex flex-col items-center justify-center">
-      {/* Conditional rendering för olika status */}
       {status === "loading" && (
         <div className="max-w-full h-screen flex flex-col items-center justify-center m-auto">
           Loading product...
@@ -33,10 +32,13 @@ const ProductPage = () => {
         </div>
       )}
 
-      {/* Om produkten är laddad och status är succeeded */}
       {status === "succeeded" && product && (
         <div className="flex gap-12 items-center justify-around shadow-lg p-12 border-b-2 border-gray-200">
-          <img src={product.image} alt={product.title} className="max-w-sm max-h-96" />
+          <img
+            src={product.image}
+            alt={product.title}
+            className="max-w-sm max-h-96"
+          />
           <div className="flex flex-col items-start justify-evenly gap-12 max-w-sm h-full">
             <h1 className="text-2xl font-bold">{product.title}</h1>
             <p className="text-lg text-gray-600">{product.description}</p>
