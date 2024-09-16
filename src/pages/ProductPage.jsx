@@ -19,7 +19,7 @@ const ProductPage = () => {
   }, [dispatch, id]); // Lyssna på dispatch och id
 
   return (
-    <div className="container m-auto h-screen flex flex-col items-center justify-center">
+    <div className=" h-screen flex flex-col items-center justify-center">
       {status === "loading" && (
         <div className="max-w-full h-screen flex flex-col items-center justify-center m-auto">
           Loading product...
@@ -33,13 +33,9 @@ const ProductPage = () => {
       )}
 
       {status === "succeeded" && product && (
-        <div className="flex gap-12 items-center justify-around shadow-lg p-12 border-b-2 border-gray-200">
-          <img
-            src={product.image}
-            alt={product.title}
-            className="max-w-sm max-h-96"
-          />
-          <div className="flex flex-col items-start justify-evenly gap-12 max-w-sm h-full">
+        <div className="max-w-[90%] lg:flex gap-12  items-center justify-center shadow-lg lg:p-12 p-6 border-b-2 border-gray-200">
+          <img src={product.image} alt={product.title} className="max-h-96" />
+          <div className="flex flex-col items-start justify-evenly lg:gap-12 gap-6 max-w-sm">
             <h1 className="text-2xl font-bold">{product.title}</h1>
             <p className="text-lg text-gray-600">{product.description}</p>
             <div className="text-2xl font-bold font-serif ">

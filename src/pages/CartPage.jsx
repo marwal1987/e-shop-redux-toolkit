@@ -18,11 +18,11 @@ const CartPage = () => {
   };
 
   return (
-    <div className="w-2/3 m-auto mt-12 flex flex-col items-center justify-start h-screen gap-12 border-2 overflow-scroll ">
+    <div className="container m-auto mt-12 flex flex-col items-center justify-start h-screen gap-12 border-2 overflow-scroll ">
       {cartItems.length > 0 ? (
         <>
           <h1 className="text-4xl font-bold mt-12">Your Cart</h1>
-          <div className="flex flex-col items-center gap-12 ">
+          <div className=" flex flex-col items-center gap-12 ">
             <ul className="flex flex-col items-center gap-12 ">
               {cartItems.map((item) => (
                 <CartItem key={item.id} item={item} />
