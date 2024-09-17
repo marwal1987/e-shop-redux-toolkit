@@ -3,12 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
       name="description"
       content="En kort beskrivning av sidans innehåll."
     />
-    <meta name="keywords" content="nyckelord1, nyckelord2, nyckelord3" />
     <meta name="robots" content="index, follow" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="http://www.example.com/seo/sitemap.xml"
+    />
+
+    <!-- Open Graph (OG) taggar för sociala medier -->
+    <meta property="og:title" content="E-shop with Redux Toolkit" />
+    <meta
+      property="og:description"
+      content="En fantastisk E-shop byggd med React och Redux Toolkit."
+    />
+    <meta property="og:image" content="https://example.com/HeroShopping.webp" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <!--  Strukturerad data  -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "E-shop with Redux Toolkit",
+        "url": "https://example.com",
+        "logo": "https://example.com/logo.png"
+      }
+    </script>
     <title>E-shop with Redux Toolkit</title>
   </head>
   <body>
@@ -16,3 +46,11 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
+<!-- Omodernt
+    
+    <meta name="keywords" content="nyckelord1, nyckelord2, nyckelord3" />
+    Detta var tidigare viktigt för SEO, då sökmotorer använde dessa nyckelord för att bättre förstå innehållet på sidan. I dagens SEO spelar den dock inte lika stor roll eftersom moderna sökmotorer som Google ignorerar den här taggen
+
+
+-->

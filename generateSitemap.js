@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import axios from 'axios';
+import { writeFileSync } from "fs";
+import axios from "axios";
 
 async function generateSitemap() {
   const response = await axios.get("https://fakestoreapi.com/products");
@@ -7,18 +7,21 @@ async function generateSitemap() {
 
   let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
+  // URL/Namn på webbsidan - Ändra innan prod
+  const domainName = "localhost";
+
   // Statiska sidor
-  sitemap += `  <url>\n    <loc>http://localhost/</loc>\n    <lastmod>${
+  sitemap += `  <url>\n    <loc>http://${domainName}/</loc>\n    <lastmod>${
     new Date().toISOString().split("T")[0]
   }</lastmod>\n    <priority>1.0</priority>\n  </url>\n`;
-  sitemap += `  <url>\n    <loc>http://localhost/cart</loc>\n    <lastmod>${
+  sitemap += `  <url>\n    <loc>http://${domainName}/cart</loc>\n    <lastmod>${
     new Date().toISOString().split("T")[0]
   }</lastmod>\n    <priority>0.8</priority>\n  </url>\n`;
 
   // Dynamiska produkt-URL:er
   products.forEach((product) => {
     sitemap += `  <url>\n`;
-    sitemap += `    <loc>http://localhost/product/${product.id}</loc>\n`;
+    sitemap += `    <loc>http://${domainName}/product/${product.id}</loc>\n`;
     sitemap += `    <lastmod>${
       new Date().toISOString().split("T")[0]
     }</lastmod>\n`;
@@ -28,7 +31,7 @@ async function generateSitemap() {
 
   sitemap += `</urlset>`;
 
-  writeFileSync('./seo/sitemap.xml', sitemap);
+  writeFileSync("./seo/sitemap.xml", sitemap);
 }
 
 generateSitemap();
