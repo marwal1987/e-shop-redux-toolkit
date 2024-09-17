@@ -13,7 +13,7 @@ const ProductCard = ({ product }) => {
         to={`/product/${product.id}`}
         className="w-full flex flex-col items-center gap-12"
       >
-        <img src={product.image} alt={product.title} className="max-h-72" />
+        <img src={product.image} alt={product.title} loading="lazy" className="max-h-72" />
         <h2 className="text-lg font-bold text-center drop-shadow">
           {product.title}
         </h2>

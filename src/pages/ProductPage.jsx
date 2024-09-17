@@ -34,7 +34,7 @@ const ProductPage = () => {
 
       {status === "succeeded" && product && (
         <div className="max-w-[90%] lg:flex gap-12  items-center justify-center shadow-lg lg:p-12 p-6 border-b-2 border-gray-200">
-          <img src={product.image} alt={product.title} className="max-h-96" />
+          <img src={product.image} alt={product.title} loading="lazy" className="max-h-96" />
           <div className="flex flex-col items-start justify-evenly lg:gap-12 gap-6 max-w-sm">
             <h1 className="text-2xl font-bold">{product.title}</h1>
             <p className="text-lg text-gray-600">{product.description}</p>

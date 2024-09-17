@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: http://localhost/seo/sitemap.xml

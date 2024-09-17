@@ -10,6 +10,7 @@ const Header = () => {
       <img
         src="src/assets/logoShopping.webp"
         alt="logo"
+        loading="lazy"
         className="w-8 rounded-lg"
       />
 
