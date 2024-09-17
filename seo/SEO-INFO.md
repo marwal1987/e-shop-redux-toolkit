@@ -96,6 +96,8 @@ Sitemap: http://www.example.com/seo/sitemap.xml
 
 #### 7. **Open Graph (OG) Tags** (för sociala medier)
 
+Mer info här: [DigitalOcean Guide](https://www.digitalocean.com/community/tutorials/how-to-add-twitter-card-and-open-graph-social-metadata-to-your-webpage-with-html)
+
 - **Beskrivning:** Kontrollerar hur sidan visas när den delas på sociala medier som Facebook eller LinkedIn.
 - **Användning:** Indirekt relevant för SEO då delningar kan öka trafik. Exempel:
   ```html
