@@ -7,13 +7,13 @@ const Header = () => {
 
   return (
     <header className="bg-[#3a3f54] sticky top-0 flex max-w-full items-center justify-between p-6 text-white">
+
       <img
         src="src/assets/logoShopping.webp"
         alt="logo"
         loading="lazy"
-        className="w-8 rounded-lg"
+        className="w-6 rounded-full"
       />
-
       <NavLink to="/">
         <FaHome size={20} />
       </NavLink>

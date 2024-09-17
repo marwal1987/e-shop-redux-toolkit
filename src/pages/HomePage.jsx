@@ -36,8 +36,7 @@ const HomePage = () => {
 
       {status === "succeeded" && products.length > 0 && (
         <div className="max-w-[90%] flex flex-col items-center justify-center m-auto gap-12">
-          <h1 className="text-3xl font-bold mt-12">All Products</h1>
-
+          <h1 className="text-3xl font-bold mt-12 font-serif">All Products</h1>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map((product) => (
               <ProductCard key={product.id} product={product} /> // Rendera ProductCard för varje produkt, skickar med produktdatat

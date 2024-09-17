@@ -21,7 +21,7 @@ const CartPage = () => {
     <div className="container m-auto mt-12 flex flex-col items-center justify-start h-screen gap-12 border-2 overflow-scroll ">
       {cartItems.length > 0 ? (
         <>
-          <h1 className="text-4xl font-bold mt-12">Your Cart</h1>
+          <h1 className="text-4xl font-bold mt-12 font-serif">Your Cart</h1>
           <div className=" flex flex-col items-center gap-12 ">
             <ul className="flex flex-col items-center gap-12 ">
               {cartItems.map((item) => (
@@ -44,9 +44,9 @@ const CartPage = () => {
         </>
       ) : (
         <div className="max-w-full h-screen flex flex-col items-center gap-12">
-          <h1 className="text-4xl font-bold mt-12">Your cart is empty!</h1>
+          <h1 className="text-4xl font-bold mt-12 font-serif">Your cart is empty!</h1>
           <button
-            className="bg-[#3a3f54] hover:bg-green-400 text-gray-100 font-bold py-2 px-4 ml-2 m-2 rounded"
+            className="bg-[#3a3f54] hover:bg-[#f3929c] text-gray-100 font-bold py-2 px-4 ml-2 m-2 rounded"
             onClick={() => navigate("/")}
           >
             Back to products
