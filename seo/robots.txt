@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /private/ 
-Sitemap: http://localhost/seo/sitemap.xml
