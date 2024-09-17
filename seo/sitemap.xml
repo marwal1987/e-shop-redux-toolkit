@@ -1,19 +1,112 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.example.com/</loc>
+    <loc>http://localhost/</loc>
     <lastmod>2024-09-17</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://www.example.com/cart</loc>
+    <loc>http://localhost/cart</loc>
     <lastmod>2024-09-17</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://www.example.com/product</loc>
+    <loc>http://localhost/product/1</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/2</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/3</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/4</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/5</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/6</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/7</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/8</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/9</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/10</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/11</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/12</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/13</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/14</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/15</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/16</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/17</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/18</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/19</loc>
+    <lastmod>2024-09-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://localhost/product/20</loc>
     <lastmod>2024-09-17</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>
-
-
