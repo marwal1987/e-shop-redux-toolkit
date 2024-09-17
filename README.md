@@ -1,18 +1,27 @@
 ## FakeStore med React/vite och Redux Toolkit
 
 # TODOS:
+## Installera paket:
+`npm install sitemap react-helmet-async`
+
 ## SEO
-- npm install sitemap
 - npm run generate-sitemap
 
 ## Meta taggar
-- npm install react-helmet-async
 - Lägg till på varje sida. T.ex:
 ```
+import MetaTags from "../components/MetaTags";
+
 const HomePage = () => (
   <>
-    <MetaTags title="Home - E-shop" description="Welcome to our e-shop!" />
-    {/* Resten av din sida */}
+    <MetaTags 
+      title="Home - E-shop with Redux Toolkit" 
+      description="Välkommen till vår fantastiska E-shop, byggd med React och Redux Toolkit." 
+    />
+    <HeroSection />
+    {/* Resten av sidan */}
   </>
 );
+
+export default HomePage;
 ```
