@@ -5,12 +5,15 @@ import CartItem from "../components/CartItem";
 import MetaTags from "../components/MetaTags";
 
 const CartPage = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const cartItems = useSelector((state) => state.cart.items); // Hämta kundvagnens innehåll från Redux
+  const cartItems = useSelector((state) => state.cart.cartItems); // Hämta kundvagnens innehåll från Redux
+  const dispatch = useDispatch();
 
   const calculateTotal = () => {
-    return cartItems.reduce((total, item) => total + item.price, 0);
+    return cartItems.reduce(
+      (total, item) => total + item.price * item.quantity,
+      0
+    );
   };
 
   const handleCheckout = () => {
@@ -19,7 +22,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container m-auto mt-12 flex flex-col items-center justify-start h-screen gap-12 border-2 overflow-scroll ">
+    <div className="container m-auto flex flex-col items-center justify-start h-screen border-2 overflow-scroll">
       {cartItems.length > 0 ? (
         <>
           <MetaTags
@@ -28,16 +31,17 @@ const CartPage = () => {
           />
           <h1 className="text-4xl font-bold mt-12 font-serif">Your Cart</h1>
           <div className=" flex flex-col items-center gap-12 ">
-            <ul className="flex flex-col items-center gap-12 ">
+            <ul className="flex flex-col items-center gap-6 ">
               {cartItems.map((item) => (
                 <CartItem key={item.id} item={item} />
               ))}
             </ul>
-            <p className="text-3xl font-bold font-serif">
+
+            <p className="text-3xl font-bold font-mono ">
               Total: ${calculateTotal().toFixed(2)}
-              <div className="text-sm font-extralight text-gray-500">
-                (VAT included)
-              </div>
+              <span className="text-sm align-super font-extralight text-gray-500">
+                (VAT incl.)
+              </span>
             </p>
             <button
               className="bg-[#3a3f54] hover:bg-green-400 text-gray-100 font-bold py-2 px-4 ml-2 m-2 rounded"

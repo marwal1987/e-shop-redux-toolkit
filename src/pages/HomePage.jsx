@@ -23,21 +23,21 @@ const HomePage = () => {
 
       <HeroSection />
       {status === "loading" && (
-        <div className="max-w-full h-screen flex items-center justify-center m-auto">
+        <h1 className="text-xl font-serif font-bold max-w-full h-screen flex items-center justify-center m-auto">
           Loading products...
-        </div>
+        </h1>
       )}
 
       {status === "failed" && (
-        <div className="max-w-full h-screen flex items-center justify-center m-auto">
+        <h1 className="text-xl font-serif font-bold max-w-full h-screen flex items-center justify-center m-auto">
           Failed to load products. Please try again later.
-        </div>
+        </h1>
       )}
 
       {status === "succeeded" && products.length === 0 && (
-        <div className="max-w-full h-screen flex items-center justify-center m-auto">
+        <h1 className="text-xl font-serif font-bold max-w-full h-screen flex items-center justify-center m-auto">
           No products found.
-        </div>
+        </h1>
       )}
 
       {status === "succeeded" && products.length > 0 && (

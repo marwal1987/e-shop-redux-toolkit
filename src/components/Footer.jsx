@@ -11,7 +11,7 @@ const Footer = () => {
           src="src/assets/logoShopping.webp"
           alt="logo"
           loading="lazy"
-          className="w-8 rounded-lg"
+          className="w-8 rounded-full"
         />
 
         <div className="flex items-center justify-center p-4">
@@ -27,7 +27,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center pt-2 text-gray-400 text-sm pb-2">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-center py-2 text-gray-400 text-sm">
         <span>© 2024 All rights reserved.</span>
         <span>Terms · Privacy Policy</span>
       </div>

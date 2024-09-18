@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [], // Array för produkter i kundvagnen
+  cartItems: [], // Ändra till cartItems istället för items
 };
 
 const cartSlice = createSlice({
@@ -9,17 +9,33 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart: (state, action) => {
-      state.items.push(action.payload);
+      const itemIndex = state.cartItems.findIndex(
+        item => item.id === action.payload.id
+      );
+      if (itemIndex >= 0) {
+        state.cartItems[itemIndex].quantity += 1;
+      } else {
+        const tempProduct = { ...action.payload, quantity: 1 };
+        state.cartItems.push(tempProduct);
+      }
     },
     removeFromCart: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload);
+      state.cartItems = state.cartItems.filter(
+        item => item.id !== action.payload.id
+      );
+    },
+    updateCartItemQuantity: (state, action) => {
+      const { id, quantity } = action.payload;
+      const item = state.cartItems.find(item => item.id === id);
+      if (item) {
+        item.quantity = quantity;
+      }
     },
     clearCart: (state) => {
-      state.items = [];
+      state.cartItems = []; // Rensa varukorgen helt
     },
   },
 });
 
-// Exportera reducer och actions
-export const { addToCart, removeFromCart, clearCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateCartItemQuantity, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;
