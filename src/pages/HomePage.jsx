@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllProducts } from "../store/slices/productSlice"; // Importera din thunk
+import MetaTags from "../components/MetaTags";
 import ProductCard from "../components/ProductCard";
 import HeroSection from "../components/HeroSection";
 
@@ -15,6 +16,11 @@ const HomePage = () => {
 
   return (
     <>
+      <MetaTags
+        title="Home - E-shop with Redux Toolkit"
+        description="Explore our wide range of products at E-shop, powered by React and Redux Toolkit. Shop for your favorite items today!"
+      />
+
       <HeroSection />
       {status === "loading" && (
         <div className="max-w-full h-screen flex items-center justify-center m-auto">

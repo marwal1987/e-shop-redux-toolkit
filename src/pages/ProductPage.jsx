@@ -1,8 +1,9 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProductById } from "../store/slices/productSlice"; // Importera thunk
 import { addToCart } from "../store/slices/cartSlice"; // Importera action addToCart
+import MetaTags from "../components/MetaTags";
 
 const ProductPage = () => {
   const { id } = useParams(); // Hämta produktens id från URL:en
@@ -34,32 +35,45 @@ const ProductPage = () => {
 
       {status === "succeeded" && product && (
         <>
-        <h1 className="text-4xl font-bold m-12 font-serif">Product Details</h1>
-        <div className="max-w-[90%] lg:flex gap-12  items-center justify-center shadow-lg lg:p-12 p-6 border-b-2 border-gray-200">
-          <img src={product.image} alt={product.title} loading="lazy" className="max-h-96" />
-          <div className="flex flex-col items-start justify-evenly lg:gap-12 gap-6 max-w-sm">
-            <h1 className="text-2xl font-bold">{product.title}</h1>
-            <p className="text-lg text-gray-600 font-serif">{product.description}</p>
-            <div className="text-2xl font-bold font-serif ">
-              ${product.price.toFixed(2)}
-            </div>
-            <div className="flex gap-6">
-              <button
-                className="bg-[#f3929c] text-gray-100 p-2 rounded font-bold hover:bg-[#3a3f54] "
-                onClick={() => dispatch(addToCart(product))}
-              >
-                Add to Cart
-              </button>
-              <button
-                className="bg-[#3a3f54] text-gray-100 p-2 rounded hover:bg-[#f3929c] "
-                onClick={() => navigate("/cart")}
-              >
-                Checkout Cart
-              </button>
+          <MetaTags
+            title={`Buy ${product.title} - E-shop`}
+            description={`Learn more about ${product.title}. Price: $${product.price}. Buy it on E-shop now!`}
+          />
+          <h1 className="text-4xl font-bold m-12 font-serif">
+            Product Details
+          </h1>
+          <div className="max-w-[90%] lg:flex gap-12  items-center justify-center shadow-lg lg:p-12 p-6 border-b-2 border-gray-200">
+            <img
+              src={product.image}
+              alt={product.title}
+              loading="lazy"
+              className="max-h-96"
+            />
+            <div className="flex flex-col items-start justify-evenly lg:gap-12 gap-6 max-w-sm">
+              <h1 className="text-2xl font-bold">{product.title}</h1>
+              <p className="text-lg text-gray-600 font-serif">
+                {product.description}
+              </p>
+              <div className="text-2xl font-bold font-serif ">
+                ${product.price.toFixed(2)}
+              </div>
+              <div className="flex gap-6">
+                <button
+                  className="bg-[#f3929c] text-gray-100 p-2 rounded font-bold hover:bg-[#3a3f54] "
+                  onClick={() => dispatch(addToCart(product))}
+                >
+                  Add to Cart
+                </button>
+                <button
+                  className="bg-[#3a3f54] text-gray-100 p-2 rounded hover:bg-[#f3929c] "
+                  onClick={() => navigate("/cart")}
+                >
+                  Checkout Cart
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </>
+        </>
       )}
     </div>
   );

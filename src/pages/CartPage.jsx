@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { clearCart } from "../store/slices/cartSlice";
 import CartItem from "../components/CartItem";
+import MetaTags from "../components/MetaTags";
 
 const CartPage = () => {
   const dispatch = useDispatch();
@@ -21,6 +22,10 @@ const CartPage = () => {
     <div className="container m-auto mt-12 flex flex-col items-center justify-start h-screen gap-12 border-2 overflow-scroll ">
       {cartItems.length > 0 ? (
         <>
+          <MetaTags
+            title="Shopping Cart - E-shop"
+            description="View and manage the items in your shopping cart. Complete your purchase on E-shop today!"
+          />
           <h1 className="text-4xl font-bold mt-12 font-serif">Your Cart</h1>
           <div className=" flex flex-col items-center gap-12 ">
             <ul className="flex flex-col items-center gap-12 ">
@@ -44,7 +49,9 @@ const CartPage = () => {
         </>
       ) : (
         <div className="max-w-full h-screen flex flex-col items-center gap-12">
-          <h1 className="text-4xl font-bold mt-12 font-serif">Your cart is empty!</h1>
+          <h1 className="text-4xl font-bold mt-12 font-serif">
+            Your cart is empty!
+          </h1>
           <button
             className="bg-[#3a3f54] hover:bg-[#f3929c] text-gray-100 font-bold py-2 px-4 ml-2 m-2 rounded"
             onClick={() => navigate("/")}
