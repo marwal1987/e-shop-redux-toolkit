@@ -15,7 +15,8 @@ FakeStore är en e-handelsapplikation som använder React, Redux Toolkit, Vite, 
 
 ## Inför prod. Ändra alla URL:er till den riktiga domänen
 
-För att säkerställa att applikationen pekar på rätt domän när den är live, följ dessa steg för att byta ut alla **`localhost:5173`** -referenser mot ditt faktiska domännamn.
+För att applikationen ska peka på rätt domän när den är live,
+följ dessa steg för att byta ut alla **`localhost:5173`** -referenser mot ditt faktiska domännamn.
 
 ### 1. public/robots.txt
 
@@ -28,7 +29,7 @@ För att säkerställa att applikationen pekar på rätt domän när den är liv
 - Ändra `hostname` till din faktiska domän:
 
 ```js
-const sitemap = new SitemapStream({ hostname: "http://localhost:5173" });
+const sitemap = new SitemapStream({ hostname: "http://www.dinRiktigadomän.se" });
 ```
 
 ### 3. /index.html
@@ -40,14 +41,14 @@ const sitemap = new SitemapStream({ hostname: "http://localhost:5173" });
   rel="sitemap"
   type="application/xml"
   title="Sitemap"
-  href="http://localhost:5173/sitemap.xml"
+  href="http://www.dinRiktigadomän.se/sitemap.xml"
 />
-<meta property="og:url" content="http://localhost:5173/" />
+<meta property="og:url" content="http://www.dinRiktigadomän.se/" />
 ```
 
 - Structured Data (ld+json):
 
 ```json
-"url": "https://localhost:5173",
-"logo": "https://localhost:5173/logo.png"
+"url": "https://www.dinRiktigadomän.se",
+"logo": "https://www.dinRiktigadomän.se/logo.png"
 ```

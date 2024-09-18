@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { FaHome, FaShoppingCart } from "react-icons/fa";
-import logoShopping from "src/assets/logoShopping.webp"; // importerar bilden för att undvika potentiella problem vid byggning eller deploy (t.ex. med Vite)
+import logoShopping from "../assets/logoShopping.webp"; // importerar bilden för att undvika potentiella problem vid byggning eller deploy (t.ex. med Vite)
 
 const Header = () => {
   const cartItemsCount = useSelector((state) => state.cart.items.length); // Hämtar antal varor i kundvagnen från Redux
