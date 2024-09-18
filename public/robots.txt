@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /admin/ 
-Sitemap: http://www.example.com/sitemap.xml
+Sitemap: http://localhost:5173/sitemap.xml

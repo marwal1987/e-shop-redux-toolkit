@@ -7,7 +7,7 @@ async function generateSitemap() {
   const response = await axios.get("https://fakestoreapi.com/products");
   const products = response.data;
 
-  const sitemap = new SitemapStream({ hostname: "http://localhost" });
+  const sitemap = new SitemapStream({ hostname: "http://localhost:5173" });
   const writeStream = createWriteStream("./public/sitemap.xml");
 
   sitemap.pipe(writeStream);

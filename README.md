@@ -13,9 +13,9 @@ FakeStore är en e-handelsapplikation som använder React, Redux Toolkit, Vite, 
 - **React-Helmet-Async**: För dynamisk hantering av metadata som förbättrar SEO.
 - **Sitemap**: Används för att generera sitemaps genom ett skript i `sitemap-generator.js`.
 
-## Inför prod. Ändra URL:er
+## Inför prod. Ändra alla URL:er till den riktiga domänen
 
-För att säkerställa att applikationen pekar på rätt domän när den är live, följ dessa steg för att byta ut alla **`localhost`** eller **`example.com`** -referenser mot ditt faktiska domännamn.
+För att säkerställa att applikationen pekar på rätt domän när den är live, följ dessa steg för att byta ut alla **`localhost:5173`** -referenser mot ditt faktiska domännamn.
 
 ### 1. public/robots.txt
 
@@ -28,7 +28,7 @@ För att säkerställa att applikationen pekar på rätt domän när den är liv
 - Ändra `hostname` till din faktiska domän:
 
 ```js
-const sitemap = new SitemapStream({ hostname: "http://localhost" });
+const sitemap = new SitemapStream({ hostname: "http://localhost:5173" });
 ```
 
 ### 3. /index.html
@@ -40,15 +40,14 @@ const sitemap = new SitemapStream({ hostname: "http://localhost" });
   rel="sitemap"
   type="application/xml"
   title="Sitemap"
-  href="http://www.example.com/sitemap.xml"
+  href="http://localhost:5173/sitemap.xml"
 />
-<meta property="og:url" content="http://www.example.com/" />
+<meta property="og:url" content="http://localhost:5173/" />
 ```
 
-- Structured Data (ld+json): Ändra till din riktiga domän
+- Structured Data (ld+json):
 
 ```json
-
-"url": "https://example.com",
-"logo": "https://example.com/logo.png"
+"url": "https://localhost:5173",
+"logo": "https://localhost:5173/logo.png"
 ```
