@@ -13,6 +13,36 @@ FakeStore är en e-handelsapplikation som använder React, Redux Toolkit, Vite, 
 - **React-Helmet-Async**: För dynamisk hantering av metadata som förbättrar SEO.
 - **Sitemap**: Används för att generera sitemaps genom ett skript i `sitemap-generator.js`.
 
+## Lazy loading - inbyggd eller `react-lazyload`
+
+- Jag använder inbyggd lazy loading, vilket är tillräckligt i de flesta fall. 
+```jsx
+<img
+  src={logoShopping}
+  alt="logo"
+  loading="lazy"
+  className="w-6 rounded-full"
+/>
+```
+
+Saker att överväga inför byte till `react-lazyloading`:
+
+- Behöver du mer avancerade funktioner som tröskelvärden för när bilder laddas?
+- Vill du använda platshållare under tiden bilder laddas?
+- Behöver du detaljerad kontroll över hur och när innehåll laddas?
+
+### Installera och implementera `react-lazyload`
+
+`npm install react-lazyload`
+
+```jsx
+import LazyLoad from "react-lazyload";
+
+<LazyLoad height={200}>
+  <img src="path_to_large_image.jpg" alt="Beskrivning" />
+</LazyLoad>;
+```
+
 ## Inför prod. Ändra alla URL:er till den riktiga domänen
 
 För att applikationen ska peka på rätt domän när den är live,
@@ -29,7 +59,9 @@ följ dessa steg för att byta ut alla **`localhost:5173`** -referenser mot ditt
 - Ändra `hostname` till din faktiska domän:
 
 ```js
-const sitemap = new SitemapStream({ hostname: "http://www.dinRiktigadomän.se" });
+const sitemap = new SitemapStream({
+  hostname: "http://www.dinRiktigadomän.se",
+});
 ```
 
 ### 3. /index.html
@@ -52,3 +84,9 @@ const sitemap = new SitemapStream({ hostname: "http://www.dinRiktigadomän.se" }
 "url": "https://www.dinRiktigadomän.se",
 "logo": "https://www.dinRiktigadomän.se/logo.png"
 ```
+
+### 4. scripts/generate-robots.js
+
+- Uppdatera till rätt domän:
+
+`User-agent: *\nAllow: /\nDisallow: /admin/\nSitemap: https://www.dinRiktigadomän.se/sitemap.xml`

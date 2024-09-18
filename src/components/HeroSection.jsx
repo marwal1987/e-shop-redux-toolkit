@@ -11,7 +11,7 @@ const HeroSection = () => {
     >
       <div className="flex flex-col items-center  bg-white  drop-shadow-xl  lg:p-36 p-12 gap-12 max-w-full text-center shadow-sm bg-opacity-10 backdrop-blur-xl">
         <div className="lg:w-2/5 w-3/5 flex flex-col lg:gap-12 gap-6">
-          <h1 className="xl:text-7xl lg:text-5xl text-4xl text-[#3a3f54] font-bold font-serif drop-shadow ">
+          <h1 className="xl:text-7xl lg:text-5xl text-4xl text-[#3a3f54] font-serif drop-shadow ">
             Welcome to Your Shopping Experience
           </h1>
           <p className="lg:text-3xl font-serif text-xl drop-shadow text-[#3a3f54]">
