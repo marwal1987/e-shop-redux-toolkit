@@ -1,7 +1,6 @@
 // src/components/HeroSection.jsx
 import React from "react";
 import heroImage from "../assets/HeroShopping.webp"; // Importera bilden
-const FaArrowDown = React.lazy(() => import('react-icons/fa').then(module => ({ default: module.FaArrowDown })));
 
 const HeroSection = () => {
   return (
@@ -10,7 +9,6 @@ const HeroSection = () => {
         src={heroImage}
         alt="Hero Image"
         className="w-full object-cover max-h-[800px]"
-        loading="lazy"
       />
       <div className="absolute inset-0 flex flex-col items-center justify-center bg-white drop-shadow-xl lg:p-36 p-12 gap-12 max-w-full text-center shadow-sm bg-opacity-30 backdrop-blur-lg">
         <div className="flex flex-col  xl:w-2/5 md:w-4/5 w-full  md:gap-12 gap-6">
@@ -21,8 +19,8 @@ const HeroSection = () => {
             Try it out! Start by adding products to the cart!
           </p>
         </div>
-        <div className="bg-[#f3929cdd] text-white md:p-4 p-2 rounded-full animate-bounce inline-block">
-          <FaArrowDown size={20} />
+        <div className="bg-[#f3929cdd] text-gray-100 px-4 py-1 rounded-full animate-bounce inline-block text-3xl font-extrabold">
+        &darr;
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/slices/cartSlice"; // Importera Redux action
-import { FaShoppingBag } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -13,22 +12,29 @@ const ProductCard = ({ product }) => {
         to={`/product/${product.id}`}
         className="flex flex-col items-center"
       >
-        <img src={product.image} alt={product.title} loading="lazy" className="max-h-72" />
+        <img
+          src={product.image}
+          alt={product.title}
+          loading="lazy"
+          className="max-h-72"
+        />
       </Link>
       <div className="w-full min-h-40 flex flex-col items-center justify-end gap-4">
-        <h2 className="text-md font-bold text-left drop-shadow w-full">
+        <h2 className="text-lg text-gray-900 text-left drop-shadow w-full">
           {product.title.substring(0, 61)} ...
         </h2>
-       <div className="w-full flex items-center justify-between">
-        <p className="text-gray-800 font-bold text-left text-xl font-serif drop-shadow rounded-xl">
-          ${product.price.toFixed(2)}
-        </p>
-        <button
-          onClick={() => dispatch(addToCart(product))} // Använd Redux för att lägga till produkt i kundvagnen
+        <div className="w-full flex items-center justify-between">
+          <p className="text-gray-950 font-bold text-left text-xl font-serif drop-shadow rounded-xl">
+            ${product.price.toFixed(2)}
+          </p>
+
+          <button
+            className="flex items-center hover:text-gray-100  hover:bg-[#3a3f54] ease-in font-bold border-2 border-[#3a3f54] px-2 rounded-md"
+            onClick={() => dispatch(addToCart(product))} // Använd Redux för att lägga till produkt i kundvagnen
           >
-          <FaShoppingBag className="text-[#f3929c] hover:text-gray-800 ease-in " />
-        </button>
-          </div>
+            Add
+          </button>
+        </div>
       </div>
     </div>
   );

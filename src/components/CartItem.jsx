@@ -15,7 +15,7 @@ const CartItem = ({ item }) => {
   };
 
   return (
-    <li className="w-full flex items-center justify-between min-h-28 gap-6 shadow-lg p-4 border-b-2 border-gray-100 ">
+    <li className="w-full flex items-center justify-between min-h-28 gap-6 shadow-sm p-6 border-b-2 border-gray-100">
       <div className="flex items-center justify-start gap-6 ">
         <img
           src={item.image}
@@ -45,9 +45,9 @@ const CartItem = ({ item }) => {
 
           <button
             onClick={() => dispatch(removeFromCart(item))}
-            className="text-red-500 hover:text-red-700"
+            className="text-red-500 hover:text-red-700 font-bold text-sm rounded-full"
           >
-            <FaTrashAlt />
+            X
           </button>
         </div>
       </div>

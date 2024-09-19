@@ -17,25 +17,25 @@ const HomePage = () => {
   return (
     <>
       <MetaTags
-        title="Home - E-shop with Redux Toolkit"
+        title="Home - E-Shop with Redux Toolkit"
         description="Explore our wide range of products at E-shop, powered by React and Redux Toolkit. Shop for your favorite items today!"
       />
 
       <HeroSection />
       {status === "loading" && (
-        <h1 className="text-xl font-serif font-bold max-w-full h-screen flex items-center justify-center m-auto">
+        <h1 className="text-3xl font-serif font-bold text-center">
           Loading products...
         </h1>
       )}
 
       {status === "failed" && (
-        <h1 className="text-xl font-serif font-bold max-w-full h-screen flex items-center justify-center m-auto">
+        <h1 className="text-3xl font-serif font-bold text-center">
           Failed to load products. Please try again later.
         </h1>
       )}
 
       {status === "succeeded" && products.length === 0 && (
-        <h1 className="text-xl font-serif font-bold max-w-full h-screen flex items-center justify-center m-auto">
+        <h1 className="text-3xl font-serif font-bold text-center">
           No products found.
         </h1>
       )}
