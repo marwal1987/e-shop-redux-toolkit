@@ -14,12 +14,12 @@ const ProductCard = ({ product }) => {
         className="w-full flex flex-col items-center gap-12"
       >
         <img src={product.image} alt={product.title} loading="lazy" className="max-h-72" />
-        <h2 className="text-lg font-bold text-center drop-shadow">
+      </Link>
+        <h2 className="text-lg font-bold text-left drop-shadow w-full">
           {product.title}
         </h2>
-      </Link>
       <div className="w-full flex items-center justify-between">
-        <p className="text-gray-800 font-bold text-center text-xl font-serif drop-shadow rounded-xl">
+        <p className="text-gray-800 font-bold text-left text-xl font-serif drop-shadow rounded-xl">
           ${product.price.toFixed(2)}
         </p>
         <button

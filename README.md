@@ -9,7 +9,7 @@ FakeStore är en e-handelsapplikation som använder React, Redux Toolkit, Vite, 
 - **React**: Bibliotek för att bygga användargränssnitt.
 - **Vite**: Byggverktyg som möjliggör snabb utveckling och byggning.
 - **Redux Toolkit**: Hanterar global state management.
-- **Axios**: För att göra HTTP-anrop till API.
+- **Axios**: För att göra HTTP-anrop till FakeStore API.
 - **React-Helmet-Async**: För dynamisk hantering av metadata som förbättrar SEO.
 - **Sitemap**: Används för att generera sitemaps genom ett skript i `sitemap-generator.js`.
 
