@@ -18,7 +18,7 @@ const HeroSection = () => {
             WELCOME TO MY FAKE E-STORE WEBSITE
           </h1>
           <p className="lg:text-3xl md:text-2xl font-serif text-xl drop-shadow text-gray-900">
-            Test the app by adding products to the cart
+            Try it out! Start by adding products to the cart!
           </p>
         </div>
         <div className="bg-[#f3929cdd] text-white md:p-4 p-2 rounded-full animate-bounce inline-block">
