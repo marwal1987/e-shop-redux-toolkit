@@ -16,3 +16,6 @@ console.log(
     isProduction ? "production" : "development"
   }-miljön`
 );
+
+// Varför?
+// Skriptet kan köras i github-actions. På så sätt behöver man inte ändra något.

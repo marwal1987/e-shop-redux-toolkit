@@ -54,11 +54,15 @@ const Header = () => {
           height="24"
           fill="currentColor"
         >
-          <path d="M3 10l9-9 9 9V21a1 0 0 0 0-1 1h-5a1 1 0 0 1-1-1v-6h-4v6a80 1 0 0 1-1 1H4a1 1 0 0 1-1-1v" />
+          <path d="M3 10l9-9 9 9V21a1 0 0 0 0-1 1h-5a1 1 0 0 1-1-1v-6h-4v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v1Z" />
         </svg>
       </NavLink>
 
-      <NavLink to="/cart" aria-label="Cart" className="flex items-center gap-1 border-2 border-gray-500 p-2 rounded-lg">
+      <NavLink
+        to="/cart"
+        aria-label="Cart"
+        className="flex items-center gap-1 border-2 border-gray-500 p-2 rounded-lg"
+      >
         Cart
         <span className="text-xs text-[#f3929c] font font-bold">
           {cartItemsCount}

@@ -1,6 +1,4 @@
 import React from "react";
-import { FaLinkedin } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
@@ -39,23 +37,21 @@ const Footer = () => {
             STORE
           </text>
         </svg>
-
       </div>
 
       <div className="p-6 flex items-center justify-between text-center py-2 text-gray-400 text-sm">
         <p>© 2024 Martin Wallberg - All rights reserved.</p>
+
         <p>Terms · Privacy Policy</p>
-          <a
-            className="hover:text-blue-500"
-            aria-label="Visit Martin's LinkedIn"
-            href="https://www.linkedin.com/in/martin-wallberg-049a62308/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >
-            Visit my LinkedIn
-          </a>
- 
-  
+        <a
+          className="hover:text-blue-500"
+          aria-label="Visit Martin's LinkedIn"
+          href="https://www.linkedin.com/in/martin-wallberg-049a62308/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit my LinkedIn
+        </a>
       </div>
     </footer>
   );
