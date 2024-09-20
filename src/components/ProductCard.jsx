@@ -15,11 +15,10 @@ const ProductCard = ({ product }) => {
         <img
           src={product.image}
           alt={product.title}
-          loading="lazy"
           className="max-h-72"
         />
       </Link>
-      <div className="w-full min-h-40 flex flex-col items-center justify-end gap-4">
+      <div className="w-full min-h-40 flex flex-col items-center justify-end gap-4 ">
         <h2 className="text-lg text-gray-900 text-left drop-shadow w-full">
           {product.title.substring(0, 61)} ...
         </h2>

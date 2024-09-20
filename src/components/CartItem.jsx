@@ -3,7 +3,6 @@ import {
   removeFromCart,
   updateCartItemQuantity,
 } from "../store/slices/cartSlice";
-import { FaTrashAlt } from "react-icons/fa";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -42,7 +41,6 @@ const CartItem = ({ item }) => {
           ))}
         </select>
         <div className="flex items-center gap-2">
-
           <button
             onClick={() => dispatch(removeFromCart(item))}
             className="text-red-500 hover:text-red-700 font-bold text-sm rounded-full"

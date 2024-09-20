@@ -58,13 +58,9 @@ const Header = () => {
         </svg>
       </NavLink>
 
-      <NavLink
-        to="/cart"
-        aria-label="Cart"
-        className="flex items-center gap-1 border-2 border-gray-500 p-2 rounded-lg"
-      >
+      <NavLink to="/cart" aria-label="Cart" className="flex items-center gap-2">
         Cart
-        <span className="text-xs text-[#f3929c] font font-bold">
+        <span className="text-xs text-[#f3929c] font-bold ">
           {cartItemsCount}
         </span>
       </NavLink>

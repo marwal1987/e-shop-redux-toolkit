@@ -18,4 +18,4 @@ console.log(
 );
 
 // Varför?
-// Skriptet kan köras i github-actions. På så sätt behöver man inte ändra något.
+// Skriptet kan köras i github-actions. På så sätt behöver man inte ändra något i filen mellan miljöerna.

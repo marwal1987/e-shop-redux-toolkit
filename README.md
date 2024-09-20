@@ -15,17 +15,18 @@ FakeStore är en e-handelsapplikation som använder React, Redux Toolkit, Vite, 
 
 ## Lazy loading - inbyggd eller `react-lazyload`
 
-- Jag använder inbyggd lazy loading, vilket är tillräckligt i de flesta fall. 
+- Jag använder inbyggd lazy loading, vilket är tillräckligt i de flesta fall.
+
 ```jsx
 <img
-  src={logoShopping}
+  src="path/to/image.webp"
   alt="logo"
   loading="lazy"
   className="w-6 rounded-full"
 />
 ```
 
-Saker att överväga inför byte till `react-lazyloading`:
+Byta till `react-lazyloading`?:
 
 - Behöver du mer avancerade funktioner som tröskelvärden för när bilder laddas?
 - Vill du använda platshållare under tiden bilder laddas?
