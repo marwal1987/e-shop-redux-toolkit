@@ -3,7 +3,6 @@ import {
   removeFromCart,
   updateCartItemQuantity,
 } from "../store/slices/cartSlice";
-import ReactGA from "react-ga4";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -15,15 +14,6 @@ const CartItem = ({ item }) => {
   };
 
   const handleRemoveFromCart = () => {
-    // Spåra händelsen i Google Analytics
-    ReactGA.event({
-      category: "Cart",
-      action: "Add to Cart",
-      label: item.title,
-      value: item.price,
-    });
-
-    // Lägg till produkten i kundvagnen
     dispatch(removeFromCart(item));
   };
 
