@@ -1,22 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../store/slices/cartSlice"; // Importera Redux action
-import ReactGA from "react-ga4";
+import { addToCart } from "../store/slices/cartSlice";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
-    // Spåra händelsen i Google Analytics
-    ReactGA.event({
-      category: "Cart",
-      action: "Add to Cart",
-      label: product.title,
-      value: product.price,
-    });
-
-    // Lägg till produkten i kundvagnen
     dispatch(addToCart(product));
   };
 
@@ -39,7 +29,7 @@ const ProductCard = ({ product }) => {
 
           <button
             className="flex items-center hover:text-gray-100  hover:bg-[#3a3f54] ease-in font-bold border-2 border-[#3a3f54] px-2 rounded-md"
-            onClick={handleAddToCart} // Använd Redux för att lägga till produkt i kundvagnen
+            onClick={handleAddToCart}
           >
             Add
           </button>
