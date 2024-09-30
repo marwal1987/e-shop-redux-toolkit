@@ -2,9 +2,23 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/slices/cartSlice"; // Importera Redux action
+import ReactGA from "react-ga4";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    // Spåra händelsen i Google Analytics
+    ReactGA.event({
+      category: "Cart",
+      action: "Add to Cart",
+      label: product.title,
+      value: product.price,
+    });
+
+    // Lägg till produkten i kundvagnen
+    dispatch(addToCart(product));
+  };
 
   return (
     <div className="container p-6 gap-6 rounded-md shadow-md grid grid-rows-1 border-b-2 border-gray-300">
@@ -12,11 +26,7 @@ const ProductCard = ({ product }) => {
         to={`/product/${product.id}`}
         className="flex flex-col items-center"
       >
-        <img
-          src={product.image}
-          alt={product.title}
-          className="max-h-72"
-        />
+        <img src={product.image} alt={product.title} className="max-h-72" />
       </Link>
       <div className="w-full min-h-40 flex flex-col items-center justify-end gap-4 ">
         <h2 className="text-lg text-gray-900 text-left drop-shadow w-full">
@@ -29,7 +39,7 @@ const ProductCard = ({ product }) => {
 
           <button
             className="flex items-center hover:text-gray-100  hover:bg-[#3a3f54] ease-in font-bold border-2 border-[#3a3f54] px-2 rounded-md"
-            onClick={() => dispatch(addToCart(product))} // Använd Redux för att lägga till produkt i kundvagnen
+            onClick={handleAddToCart} // Använd Redux för att lägga till produkt i kundvagnen
           >
             Add
           </button>

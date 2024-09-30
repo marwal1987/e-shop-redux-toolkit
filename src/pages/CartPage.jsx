@@ -34,10 +34,10 @@ const CartPage = () => {
         <>
           <h1 className="text-4xl font-bold mt-12 font-serif">Your Cart</h1>
           <div className=" flex flex-col items-center gap-12 overflow-scroll">
-            <Suspense fallback={<div>Loading item...</div>} key={item.id}>
+            <Suspense fallback={<div>Loading item...</div>}>
               <ul className="flex flex-col items-center gap-6 ">
                 {cartItems.map((item) => (
-                  <CartItem item={item} />
+                  <CartItem item={item} key={item.id} />
                 ))}
               </ul>
             </Suspense>

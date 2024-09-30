@@ -3,6 +3,7 @@ import {
   removeFromCart,
   updateCartItemQuantity,
 } from "../store/slices/cartSlice";
+import ReactGA from "react-ga4";
 
 const CartItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -11,6 +12,19 @@ const CartItem = ({ item }) => {
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value);
     dispatch(updateCartItemQuantity({ id: item.id, quantity: newQuantity }));
+  };
+
+  const handleRemoveFromCart = () => {
+    // Spåra händelsen i Google Analytics
+    ReactGA.event({
+      category: "Cart",
+      action: "Add to Cart",
+      label: item.title,
+      value: item.price,
+    });
+
+    // Lägg till produkten i kundvagnen
+    dispatch(removeFromCart(item));
   };
 
   return (
@@ -42,10 +56,10 @@ const CartItem = ({ item }) => {
         </select>
         <div className="flex items-center gap-2">
           <button
-            onClick={() => dispatch(removeFromCart(item))}
+            onClick={handleRemoveFromCart}
             className="text-red-500 hover:text-red-700 font-bold text-sm rounded-full"
           >
-            X
+            Remove
           </button>
         </div>
       </div>

@@ -28,7 +28,13 @@ const productSlice = createSlice({
     selectedProduct: null,
     error: null,
   },
-  reducers: {},
+  reducers: {
+    clearProduct: (state) => {
+      state.selectedProduct = null;
+      state.status = null;
+      state.error = null;
+    },
+  },
   extraReducers: (builder) => {
     // Hanterar alla produkter
     builder
@@ -60,4 +66,5 @@ const productSlice = createSlice({
   },
 });
 
+export const { clearProduct } = productSlice.actions;
 export default productSlice.reducer;
