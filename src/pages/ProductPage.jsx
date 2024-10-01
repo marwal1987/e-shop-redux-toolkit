@@ -26,50 +26,12 @@ const ProductPage = () => {
       dispatch(clearProduct());
     };
   }, [dispatch, id]); // Kör endast en gång när id eller dispatch ändras
-  
-  useEffect(() => {
-    // Kör endast när produkten är fullständigt laddad
-    if (status === "succeeded" && product && product.id) {
-      // Skicka produktdata till Google Tag Manager via dataLayer
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "view_product",
-        product_id: product.id,
-        product_name: product.title,
-        product_category: product.category,
-        product_price: product.price,
-      });
-      console.log("Data Layer pushed: ", {
-        event: "view_product",
-        product_id: product.id,
-        product_name: product.title,
-        product_category: product.category,
-        product_price: product.price,
-      });
-    }
-  }, [status, product]); // Kör bara när produktens data ändras
 
   const handleAddToCart = () => {
-    // Skicka "Add to Cart" händelse till GTM
-    window.dataLayer.push({
-      event: "add_to_cart",
-      product_id: product.id,
-      product_name: product.title,
-      product_category: product.category,
-      product_price: product.price,
-    });
-
-    // Lägg till produkten i kundvagnen
     dispatch(addToCart(product));
   };
 
   const handleBackClick = () => {
-    // Skicka "Back to Home" händelse till GTM
-    window.dataLayer.push({
-      event: "navigate_back",
-      from: "ProductPage",
-      to: "HomePage",
-    });
     navigate("/");
   };
 

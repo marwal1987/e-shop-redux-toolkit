@@ -7,7 +7,7 @@ const Header = () => {
   );
 
   return (
-    <header className="bg-[#3a3f54] sticky top-0 flex max-w-full items-center justify-between p-4 text-white">
+    <header className="bg-[#3a3f54] sticky top-0 z-20 flex max-w-full items-center justify-between p-4 text-white">
       <svg
         width="50"
         height="50"
