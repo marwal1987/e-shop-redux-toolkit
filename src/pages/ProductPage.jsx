@@ -15,17 +15,12 @@ const ProductPage = () => {
   const status = useSelector((state) => state.products.status);
 
   useEffect(() => {
-    // Rensa tidigare produktdata
     dispatch(clearProduct());
-
-    // Hämta produkten en gång när komponenten laddas
     dispatch(fetchProductById(id));
-
-    // Rensa produktdata när komponenten avmonteras
     return () => {
       dispatch(clearProduct());
     };
-  }, [dispatch, id]); // Kör endast en gång när id eller dispatch ändras
+  }, [dispatch, id]);
 
   const handleAddToCart = () => {
     dispatch(addToCart(product));
