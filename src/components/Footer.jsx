@@ -1,4 +1,5 @@
 import React from "react";
+import { FaLinkedin } from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -40,17 +41,16 @@ const Footer = () => {
       </div>
 
       <div className="p-6 flex items-center justify-between text-center py-2 text-gray-400 text-sm">
+        <p>Terms · Privacy Policy</p>
         <p>© 2024 Martin Wallberg - All rights reserved.</p>
 
-        <p>Terms · Privacy Policy</p>
         <a
-          className="hover:text-blue-500"
           aria-label="Visit Martin's LinkedIn"
           href="https://www.linkedin.com/in/martin-wallberg-049a62308/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit my LinkedIn
+          <FaLinkedin size="20"/>
         </a>
       </div>
     </footer>

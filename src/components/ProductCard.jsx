@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/slices/cartSlice";
+import { FaBagShopping } from "react-icons/fa6";
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -11,31 +12,37 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="container p-6 gap-6 rounded-md shadow-md grid grid-rows-1 border-b-2 border-gray-300">
+    <article className="container flex flex-col items-center gap-12 p-4 shadow-md ">
       <Link
         to={`/product/${product.id}`}
-        className="flex flex-col items-center"
+        className="flex flex-col items-center w-full"
       >
-        <img src={product.image} alt={product.title} className="max-h-72" loading="lazy" />
+        <img
+          src={product.image}
+          alt={product.title}
+          className="w-fit h-64"
+          loading="lazy"
+        />
       </Link>
-      <div className="w-full min-h-40 flex flex-col items-center justify-end gap-4 ">
-        <h2 className="text-lg text-gray-900 text-left drop-shadow w-full">
-          {product.title.substring(0, 61)} ...
-        </h2>
-        <div className="w-full flex items-center justify-between">
-          <p className="text-gray-950 font-bold text-left text-xl font-serif drop-shadow rounded-xl">
+
+      <div className="w-full flex items-end">
+        <div className="w-full flex flex-col items-start justify-between">
+          <h3 className="text-sm text-gray-900 text-left font font-thin drop-shadow w-full">
+            {product.title.substring(0, 36)}..
+          </h3>
+          <p className="text-gray-950 font-bold text-left text-md drop-shadow">
             ${product.price.toFixed(2)}
           </p>
-
-          <button
-            className="flex items-center hover:text-gray-100  hover:bg-[#3a3f54] ease-in font-bold border-2 border-[#3a3f54] px-2 rounded-md"
-            onClick={handleAddToCart}
-          >
-            Add
-          </button>
         </div>
+        <button
+          className="hover:text-[#f3929c] ease-in font-serif"
+          onClick={handleAddToCart}
+          aria-label="Add to cart"
+        >
+          <FaBagShopping />
+        </button>
       </div>
-    </div>
+    </article>
   );
 };
 

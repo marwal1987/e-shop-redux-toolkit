@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import { FaHome, FaShoppingBag } from "react-icons/fa";
 
 const Header = () => {
   const cartItemsCount = useSelector((state) =>
@@ -47,19 +48,11 @@ const Header = () => {
         aria-label="Home"
         className="flex items-center justify-center"
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          width="24"
-          height="24"
-          fill="currentColor"
-        >
-          <path d="M3 10l9-9 9 9V21a1 0 0 0 0-1 1h-5a1 1 0 0 1-1-1v-6h-4v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v1Z" />
-        </svg>
+<FaHome size="20" />
       </NavLink>
 
       <NavLink to="/cart" aria-label="Cart" className="flex items-center gap-2">
-        Cart
+      <FaShoppingBag />
         <span className="text-xs text-[#f3929c] font-bold ">
           {cartItemsCount}
         </span>

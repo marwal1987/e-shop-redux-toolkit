@@ -23,32 +23,33 @@ const HomePage = () => {
 
       <HeroSection />
       {status === "loading" && (
-        <h1 className="text-3xl font-serif font-bold text-center">
+        <h2 className="text-3xl font-serif font-bold text-center">
           Loading products...
-        </h1>
+        </h2>
       )}
 
       {status === "failed" && (
-        <h1 className="text-3xl font-serif font-bold text-center">
+        <h2 className="text-3xl font-serif font-bold text-center">
           Failed to load products. Please try again later.
-        </h1>
+        </h2>
       )}
 
       {status === "succeeded" && products.length === 0 && (
-        <h1 className="text-3xl font-serif font-bold text-center">
+        <h2 className="text-3xl font-serif font-bold text-center">
           No products found.
-        </h1>
+        </h2>
       )}
 
       {status === "succeeded" && products.length > 0 && (
-        <div className="max-w-[90%] flex flex-col items-center justify-center m-auto gap-12">
-          <h1 className="text-3xl font-bold mt-12 font-serif">All Products</h1>
-          <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-6">
+        <section className="max-w-[90%] flex flex-col items-center justify-center m-auto gap-12">
+          <h2 className="text-3xl font-bold mt-12 font-serif">All Products</h2>
+          <div className="grid 2xl:grid-cols-5 xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-2">
+          
             {products.map((product) => (
               <ProductCard key={product.id} product={product} /> // Rendera ProductCard för varje produkt, skickar med produktdatat
             ))}
           </div>
-        </div>
+        </section>
       )}
     </>
   );
