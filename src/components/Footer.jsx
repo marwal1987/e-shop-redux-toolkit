@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa6";
 const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white w-full mt-12">
-      <div className="flex justify-between items-center bg-[#ffffff19] px-6 py-3">
+      <div className="flex justify-between items-center bg-[#ffffff19] p-4">
         <svg
           width="50"
           height="50"
@@ -38,20 +38,19 @@ const Footer = () => {
             STORE
           </text>
         </svg>
-      </div>
-
-      <div className="p-6 flex items-center justify-between text-center py-2 text-gray-400 text-sm">
-        <p>Terms · Privacy Policy</p>
-        <p>© 2024 Martin Wallberg - All rights reserved.</p>
-
         <a
           aria-label="Visit Martin's LinkedIn"
           href="https://www.linkedin.com/in/martin-wallberg-049a62308/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <FaLinkedin size="20"/>
+          <FaLinkedin size="20" />
         </a>
+      </div>
+
+      <div className="p-4 flex items-center justify-center text-center text-gray-400 text-sm gap-12">
+        <p>© 2024 Martin Wallberg - All rights reserved.</p>
+        <p>Terms · Privacy Policy</p>
       </div>
     </footer>
   );
